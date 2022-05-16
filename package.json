@@ -62,5 +62,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EscolaLMS/PDF-generate/issues"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "homepage": "https://github.com/EscolaLMS/PDF-generate#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "author": ""
 }
