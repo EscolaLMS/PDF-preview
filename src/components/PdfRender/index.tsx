@@ -32,7 +32,7 @@ const fontsManager = (collection: NodeListOf<SVGTSpanElement>) => {
   });
 };
 
-export const PdfPreview: React.FC<{
+export const PdfRender: React.FC<{
   onRendered: () => void;
   initialValue: any;
   width?: number;
@@ -89,4 +89,4 @@ export const PdfPreview: React.FC<{
   );
 };
 
-export default PdfPreview;
+export default PdfRender;

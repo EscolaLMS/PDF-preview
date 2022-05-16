@@ -1,0 +1,3 @@
+[submodule "pdf-generate"]
+	path = pdf-generate
+	url = https://github.com/EscolaLMS/pdf-generate
