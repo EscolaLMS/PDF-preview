@@ -1,5 +1,5 @@
 {
-  "name": "@escolalms/pdf-preview",
+  "name": "@escolalms/pdf-generate",
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -50,7 +50,7 @@
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EscolaLMS/PDF-preview.git"
+    "url": "git+https://github.com/EscolaLMS/PDF-generate.git"
   },
   "keywords": [
     "escola",
@@ -61,6 +61,6 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EscolaLMS/PDF-preview/issues"
+    "url": "https://github.com/EscolaLMS/PDF-generate/issues"
   }
 }

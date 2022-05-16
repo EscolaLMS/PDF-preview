@@ -1,9 +1,9 @@
 import "./index.css";
 
-import PdfRender from "./components/PdfRender";
+import PdfGenerate from "./components/PdfGenerate";
 
-export { PdfRender };
+export { PdfGenerate };
 
 export default {
-  PdfRender,
+  PdfGenerate,
 };
