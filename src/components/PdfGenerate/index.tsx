@@ -3,7 +3,6 @@ import { jsPDF } from "jspdf";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { fabric } from "fabric";
 import "svg2pdf.js";
-import "./index.css";
 
 import { fonts, setFonts } from "./utils";
 
