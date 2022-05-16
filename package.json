@@ -1,5 +1,5 @@
 {
-  "name": "pdf-preview",
+  "name": "@escolalms/pdf-preview",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,12 +8,17 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.11.35",
+    "@types/fabric": "^4.5.6",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "fabric": "^4.6.0",
+    "jspdf": "^2.5.0",
+    "svg2pdf.js": "^2.2.0",
+    "fabricjs-react": "^1.0.8",
     "react-scripts": "5.0.1",
-    "typescript": "^4.6.4",
+    "typescript": "4.5.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,5 +44,26 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "files": [
+    "lib/**/*",
+    "index.d.ts"
+  ],
+  "main": "./lib/index.js",
+  "types": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EscolaLMS/PDF-preview.git"
+  },
+  "keywords": [
+    "escola",
+    "lms",
+    "lms",
+    "rest",
+    "api"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EscolaLMS/PDF-preview/issues"
   }
 }
