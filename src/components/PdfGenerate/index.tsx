@@ -103,7 +103,18 @@ export const PdfGenerate: React.FC<{
   };
 
   return (
-    <div className="fakeA4" style={{ width, height }}>
+    <div
+      className="fakeA4"
+      style={{
+        width,
+        height,
+        display: "block",
+        minWidth: "842px",
+        minHeight: "595px",
+        border: "1px solid #d9d9d9",
+        boxShadow: "0 2px 0 rgb(0 0 0 / 2%)",
+      }}
+    >
       <FabricJSCanvas className="fakeA4-canvas" onReady={onCanvasReady} />
     </div>
   );
