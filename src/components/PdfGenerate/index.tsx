@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { fabric } from "fabric";
 import "svg2pdf.js";
-import styles from "./index.module.scss";
+
 import { fonts, setFonts } from "./utils";
 
 const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
@@ -115,7 +115,7 @@ export const PdfGenerate: React.FC<{
   };
 
   return (
-    <div className={styles.fakeA4}>
+    <div style={{ display: "block", minWidth: "842px", minHeight: "595px" }}>
       <FabricJSCanvas className="fakeA4-canvas" onReady={onCanvasReady} />
     </div>
   );
