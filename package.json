@@ -5,21 +5,23 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/fabric": "^4.5.7",
     "@types/html-escaper": "^3.0.0",
     "@types/jest": "^26.0.15",
     "@types/lodash.throttle": "^4.1.6",
     "@types/node": "^12.0.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "fabric": "^4.6.0",
+    "fabricjs-react": "^1.0.8",
     "html-escaper": "^3.0.3",
+    "jspdf": "^2.5.0",
     "lodash.throttle": "^4.1.1",
     "react": "^18",
     "react-dom": "^18",
-    "typescript": "^4.1.2",
-    "fabric": "^4.6.0",
-    "fabricjs-react": "^1.0.8",
-    "jspdf": "^2.5.0",
-    "svg2pdf.js": "^2.2.0"
+    "sass": "^1.52.1",
+    "svg2pdf.js": "^2.2.0",
+    "typescript": "^4.1.2"
   },
   "scripts": {
     "lib": "tsc --noEmit false --outDir lib --module commonjs",
@@ -68,9 +70,6 @@
   "homepage": "https://github.com/EscolaLMS/PDF-generate#readme",
   "directories": {
     "lib": "lib"
-  },
-  "devDependencies": {
-    "@types/fabric": "^4.5.7"
   },
   "author": ""
 }

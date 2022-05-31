@@ -3,14 +3,14 @@ import { jsPDF } from "jspdf";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { fabric } from "fabric";
 import "svg2pdf.js";
-
+// import "./index.module.scss";
 import { fonts, setFonts } from "./utils";
 
 const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
   let missedFont: string;
   let missedFontSize: string;
 
-  collection.forEach((text: SVGTextElement) => {
+  return collection.forEach((text: SVGTextElement) => {
     (text.childNodes as NodeListOf<SVGTSpanElement>).forEach(
       (tspan: SVGTSpanElement) => {
         const currFont = tspan.style.fontFamily;
@@ -19,7 +19,7 @@ const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
         const findedFont = Object.keys(fonts).filter(
           (t) => currFont.replace(/['"]+/g, "").toLowerCase() === t
         )[0];
-
+        console.log({ findedFont });
         if (findedFont) {
           if (
             tspan.style.fontWeight === "bold" &&
@@ -65,8 +65,8 @@ const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
 };
 
 export const PdfGenerate: React.FC<{
-  onRendered: () => void;
   initialValue: any;
+  onRendered: () => void;
   width?: number;
   height?: number;
 }> = ({ initialValue, width = 840, height = 592, onRendered }) => {
@@ -92,7 +92,7 @@ export const PdfGenerate: React.FC<{
 
           // hack for background
           // svg2pdf.js don't support % units (for now)
-
+          console.log(element.documentElement);
           if (bg) {
             bg.setAttribute("width", width + "px");
             bg.setAttribute("height", height + "px");
@@ -115,7 +115,7 @@ export const PdfGenerate: React.FC<{
   };
 
   return (
-    <div style={{ display: "block", minWidth: "842px", minHeight: "595px" }}>
+    <div className="fakeA4">
       <FabricJSCanvas className="fakeA4-canvas" onReady={onCanvasReady} />
     </div>
   );
