@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { fabric } from "fabric";
 import "svg2pdf.js";
-// import "./index.module.scss";
+import styled from "styled-components";
 import { fonts, setFonts } from "./utils";
 
 const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
@@ -64,6 +64,21 @@ const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
   });
 };
 
+const StyledFakeA4 = styled.div`
+  .fakeA4 {
+    display: block;
+    min-width: 842px;
+    min-height: 595px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  }
+  .fakeA4 > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const PdfGenerate: React.FC<{
   initialValue: any;
   onRendered: () => void;
@@ -92,7 +107,7 @@ export const PdfGenerate: React.FC<{
 
           // hack for background
           // svg2pdf.js don't support % units (for now)
-          console.log(element.documentElement);
+
           if (bg) {
             bg.setAttribute("width", width + "px");
             bg.setAttribute("height", height + "px");
@@ -115,9 +130,11 @@ export const PdfGenerate: React.FC<{
   };
 
   return (
-    <div className="fakeA4">
-      <FabricJSCanvas className="fakeA4-canvas" onReady={onCanvasReady} />
-    </div>
+    <StyledFakeA4>
+      <div className="fakeA4">
+        <FabricJSCanvas onReady={onCanvasReady} />
+      </div>
+    </StyledFakeA4>
   );
 };
 
