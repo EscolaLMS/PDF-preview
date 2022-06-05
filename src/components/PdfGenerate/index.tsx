@@ -19,7 +19,7 @@ const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
         const findedFont = Object.keys(fonts).filter(
           (t) => currFont.replace(/['"]+/g, "").toLowerCase() === t
         )[0];
-        console.log({ findedFont });
+
         if (findedFont) {
           if (
             tspan.style.fontWeight === "bold" &&
