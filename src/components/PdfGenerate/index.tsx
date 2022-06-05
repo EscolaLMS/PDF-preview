@@ -3,14 +3,14 @@ import { jsPDF } from "jspdf";
 import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react";
 import { fabric } from "fabric";
 import "svg2pdf.js";
-
+import styled from "styled-components";
 import { fonts, setFonts } from "./utils";
 
 const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
   let missedFont: string;
   let missedFontSize: string;
 
-  collection.forEach((text: SVGTextElement) => {
+  return collection.forEach((text: SVGTextElement) => {
     (text.childNodes as NodeListOf<SVGTSpanElement>).forEach(
       (tspan: SVGTSpanElement) => {
         const currFont = tspan.style.fontFamily;
@@ -64,9 +64,24 @@ const fontsManager = (collection: NodeListOf<SVGTextElement>) => {
   });
 };
 
+const StyledFakeA4 = styled.div`
+  .fakeA4 {
+    display: block;
+    min-width: 842px;
+    min-height: 595px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+  }
+  .fakeA4 > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const PdfGenerate: React.FC<{
-  onRendered: () => void;
   initialValue: any;
+  onRendered: () => void;
   width?: number;
   height?: number;
 }> = ({ initialValue, width = 840, height = 592, onRendered }) => {
@@ -115,9 +130,11 @@ export const PdfGenerate: React.FC<{
   };
 
   return (
-    <div style={{ display: "block", minWidth: "842px", minHeight: "595px" }}>
-      <FabricJSCanvas className="fakeA4-canvas" onReady={onCanvasReady} />
-    </div>
+    <StyledFakeA4>
+      <div className="fakeA4">
+        <FabricJSCanvas onReady={onCanvasReady} />
+      </div>
+    </StyledFakeA4>
   );
 };
 
